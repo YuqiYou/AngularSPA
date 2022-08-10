@@ -13,26 +13,28 @@ import { ActivatedRoute } from '@angular/router';
 
 export class CastDetailsComponent implements OnInit {
 
- id: Number;
+
  cast!:Cast;
+ id!: number;
  constructor(private activateRoute: ActivatedRoute, private CastService:CastService){}
  
 
   ngOnInit(): void {
 
-    this.getParams();
+    this.activateRoute.params.subscribe(params => {
+     
+        this.id = params["castId"];
+        console.log(params["castId"]);
+     
+    });
 
-    this.CastService.getCast(id).subscribe(m=> {
+
+
+    this.CastService.getCast(this.id).subscribe(m=> {
       this.cast = m;
-      console.log(this.cast)
+      console.log(this.cast);
     });
   }
 
-  getParams(){
-    this.activateRoute.data.subscribe(params => {
-      if(params){   
-        this.id = params?.id;
-     }
-    })
-  }
+
 }

@@ -12,6 +12,8 @@ import { CastDetailsComponent } from './public/cast/cast-details.component';
 import { GenreComponent } from './public/genre/genre.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CastComponent } from './public/cast/cast.component';
+import { AddGenreComponent } from './public/genre/add-genre.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailsComponent,
     CastDetailsComponent,
     GenreComponent,
-
+    CastComponent,
+    AddGenreComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,6 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule,
     HttpClientModule
-  
   ],
   providers: [],
   bootstrap: [AppComponent]

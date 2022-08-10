@@ -14,4 +14,11 @@ export class GenreService {
     return this.http.get<Genre[]>("https://localhost:7013/api/Genres/Genres");
 
   }
+
+  addGenre(genre:Genre):Observable<Genre>{
+    return this.http.post<Genre>("https://localhost:7079/api/Genres/add", genre);//console log out?
+  }
+  // deleteGenre(){
+  //   console.log("DeleteGenre");
+  // }
 }
